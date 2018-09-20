@@ -1,0 +1,16 @@
+How many connections are required to communicate over UART?
+3, One for Uart connection and two for TX, RX
+
+What is the purpose of "alternate functions" for GPIO pins?
+Alternate function can be used in different purposes in same pin
+
+Define "baud rate" in your own words.
+Speed of transmiting data per second. 
+
+Why do we need newlib_stubs? Specifically, is there a reason that printf won't work on the board without it?
+Newlib_stubs provides standard in and standard out to be the board. The prinf function by default will call stdin. 
+So if there is no newlib_stubs, printf won't work because it don't go through the board.
+
+What did you learn, any difficulties you had.
+
+I learned a method to debug by using UART and Logic Analyzer. UART can give me what the code I transmitted to the board and give back the information from board. I met diffculities on the make file but I figure it out by restart everything and pull previous lab file from github. 

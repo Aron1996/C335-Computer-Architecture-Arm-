@@ -1,0 +1,12 @@
+Partner: Yaokun Zhang
+
+Diffuculties: it is still hard for me to use gdb. Because every time If I make a mistake I do not know how to redo the last step, I had to run it again. And I asked several people to help me go through it. And I make a button to help to switch state. It is not very hard but it still took me a while.
+
+Question: 
+
+In previous labs, adding a peripheral has required pin initializations. Why were able to add the nunchuk without initializing anything?
+
+Because nunchuk is controlled by I2C, then we dont have to do the intialization.
+
+Question 2:
+Go through the code in both the f3d_i2c1_read_nunchuk and f3d_i2c1_read functions and answer the following question.

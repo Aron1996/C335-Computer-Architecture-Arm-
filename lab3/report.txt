@@ -1,0 +1,17 @@
+1. Flash: 32 to 512 KB
+   Ram: 16 to 80
+   2 to 3.6 Volts
+   Memory ranges from 32 to 512 Kybtes and packages from 32 to 144 pins.
+2. GPIO stands for General-purpose input/output
+
+4. PE15 and PE11
+
+5. Public Attributes:
+       uint32_t			GPIO_Pin
+       GPIOMode_TypeDef		GPIO_Mode
+       GPIOSpeed_TypeDef 	GPIO_Speed
+       GPIOOType_TypeDef 	GPIO_OType	
+       GPIOPuPd_TypeDef 	GPIO_PuPd
+
+The things I learned from this lab is that most of port number of LEDs in board, and I also knows if we want send command to
+board we need use GPIO stucture. With specify each port and the value, we could light on the LEDs or turn off them. 

@@ -1,0 +1,24 @@
+Q1) In previous labs, adding a peripheral has required pin initializations. Why were able to add the nunchuk without initializing anything?
+I2c has already initialize those pins. We can use previous configuration.
+
+Q2) What are the major differences between these two functions and what does that imply about communicating with the nunchuk?
+Nunchuk the mode is AutoEnd_Mode, which means that the nunchuk could listen automatically. So the data send from 0x00, and I2c1 send data from register. 
+
+Q3) What do all of these variables correspond to in the nunchuk?
+jx: Joystick Up/Down
+jy: Joystick Left/Right
+ax: movement in x axis
+ay: movement in y axis 
+az: movement in z axis
+C: C button
+Z: Z button
+
+Q4) Explain the code above.
+data[5] & 0x03 give the first two bits data[5]
+The first is z button and next is c button. 
+So case 0 is 0b00
+   case 1 is 0b01
+   case 2 is 0b10
+   case 3 is 0b11
+
+Difficulties: The range of nunchuk is difficult to figure out. And the board sometimes is not working so I need to reboot it few times. 

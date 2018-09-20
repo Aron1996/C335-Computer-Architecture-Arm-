@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include <string.h> 
+char *output;
+int main(void){ 
+  while(1){
+    FILE *fp;
+    printf("Hello World\n"); 
+    fp = fopen("HelloWorld.txt", "w");
+    strcat(output , "Hello World");
+    fprintf(fp, output);
+    fclose(fp);
+    sleep(3);
+  }
+}

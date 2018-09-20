@@ -1,0 +1,24 @@
+Discuss the advantages and disadvantages of printf debugging? Note: there is no right answer to this, we are just looking for your thoughts on the issue
+
+Advantage is that we could show what the value is with printing the value out. 
+Disadvantage is that it waste time to use printf and not efficient with multipul printf in function
+
+Explain why the spiReadWrite function is called inside a higher level peripheral function (the lcdWrite function).
+
+It is used to setup the LCD. If used in else place would cause seting LCD multiple times.
+
+Why does LCD_CS_DEASSERT() do? Why is it important?
+
+It tells that we are done wth communicating with LCD
+
+Explain how the character data from the ASCII array in glcdfont.c gets converted to pixels.
+
+It use ASCII[c*5 + i] to convert an character to byte, and use byte&(1) to get the value to fill the pixel on that point
+
+Give the exact timing difference between the two versions of f3d_lcd_fillScreen, from the Salae analyzer, and explain why the new function is faster.
+136ms
+New function is better because it combines two for loop together instead of using nested for loop
+
+Difficulties
+
+We have trouble to get lcd set up and how to connect the logic analyzer woking. 

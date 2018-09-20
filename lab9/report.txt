@@ -1,0 +1,20 @@
+Q1.) What are we doing here and how does it relate to what we know about SPI?
+Since we are using SD card, we need to use another slave select(SS) line to do same function as we did in SPI. The LCD also has its own ss, which we can write pixels to it. 
+
+Q2.) Explain how you might use the *f3d_delay_uS()* function within the *delay()* function to replace the delay loop below. What would you expect to be the advantage of using a timer over a delay loop?
+I would manually type a timer integer for the function input. The advantage to use a hardware timer is that it allow async counting. Also it's good for the interrupt to break consistent with board.
+
+Q3.) Read chapter 12 in the lab manual which covers DMA (direct memory access). Why might DMA be important in improving the performance of your image display application?
+It give me capability of drawing 735000 pixels/second. It means I can fill one lcd screen instantly. DMA reads from the memory bus and transfer data to peripheral bus and it directly impact the CPU. So it's important because we don't want to see delay on drawing images.
+
+Q4.) Research the FAT file system and describe the function of the file allocation table. Explain how the corruption of an entry in the table can cause part of a file to be lost.
+Allocation table is a file system that stores cluster entry in file allocation table. Operating system use it to manage file on hard drivers. For example, the SD card could use this system to allocate the file withint it. Since the first several storage blocks are used to maintain data about the file system and the remaining blocks are used to store the contents of files and directories(lab manual), if one of the entry corrupted due to some reason, the data would be lost and the storage will be messed. 
+
+Q5.) What is the difference between FAT16 and FAT32?
+FAT32 provides much larger number of clusters per partition. So it also offers great utilization over 16 system. And FAT16 system can manage 512 entries maximum on root folder, while FAT32 doesn't restrict the number of entries in the root folder. So with long file names, the FAT32 system capable of store more data than FAT16.
+
+What did you learn?
+I learned how to read bmp image on lcd and how to resize it.
+
+What difficulities did you meet?
+I met problems with reading bmp images. How to read pixel by pixel and how to allocate with lcd screen.

@@ -1,0 +1,33 @@
+Partner: Yaokun Zhang
+
+Diffuculties: it is still hard for me to use gdb. Because every time If I make a mistake I do not know how to redo the last step, I had to run it again. And I asked several people to help me go through it. And I make a button to help to switch state. It is not very hard but it still took me a while.
+
+Question: 
+
+In previous labs, adding a peripheral has required pin initializations. Why were able to add the nunchuk without initializing anything?
+
+Because nunchuk is controlled by I2C, then we dont have to do the intialization.
+
+Question 2:
+What are the major differences between these two functions and what does that imply about communicating with the nunchuk?
+
+First, in the f3d_i2c1_read, it takes one more arugment. In the nunchunk, the function does not have the register to store data. And after SendData, nunchuk also would reset the flag but in i2c1 does not have it. And most of the other are the same.
+
+Question 3:
+What do all of these variables correspond to in the nunchuk? 
+ 
+  unsigned char jx;  // 0 - 255  joystick x axis
+  unsigned char jy;  // 0 - 255  joystick y axis
+  unsigned short ax;  // accelerometer x axis
+  unsigned short ay; // accelerometer y axixs
+  unsigned short az; // accelerometer z axixs
+  unsigned char c; // 0,1 c button
+  unsigned char z; // 0,1 z button
+
+Q4) Explain the code above
+
+Bascially, the code show the combination of  C and Z button value. 
+When it is 1, it mean the button press  
+When it is 0, the button is released.
+
+And the function is just check the raw data of the nunchunk. 

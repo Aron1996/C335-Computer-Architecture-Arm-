@@ -1,0 +1,14 @@
+Author: Yaokun Zhang, yaokzhan
+Partner: Jiebo Wang, jiebwang
+Partner: Yuhan Zeng, yuhzeng
+
+Results:
+   I finish the mywc.c small program that could count the words in a file, and we also work together to figure out how poly works.
+   I understand the content in memory address and the differences between integer and other types of data.
+
+Diffculties:
+   I can't understand the memory address can store more than one content at the beginning, and I also have no idea where to start.
+   So I ask AI about the content in memory and he gave me detailed explanation. I figure it out quickly because of his effort.
+
+Something I learned:
+   The most important thing I learned from this lab is the memory address and its related field. I know Integer are stored in four bytes, short in two bytes and so on. I also learned a lot with make file. 

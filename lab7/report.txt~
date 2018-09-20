@@ -1,0 +1,26 @@
+Question 1:
+It has 14 pins:  
+Vdd_IO: Power supply for I/O pins
+SCL: Signal interface I2C serial clock (SCL)
+SDA: Signal interface I2C serial data (SDA)
+INT2: Inertial Interrupt 2
+INT1: Inertial Interrupt 1
+C1:   Reserved capacitor connection (C1)
+GND:  0 V supply
+Reserved: Leave unconnected
+DRDY:	  Data ready
+Reserved: Connect to GND
+Reserved: Connect to GND
+SETP:	  S/R capacitor connection (C2)
+SETC:	  S/R capacitor connection (C2)
+Vdd:	  Power supply
+volts are from 2.16v to 3.6v
+It's in the top right of the list of pins.
+
+Q2) Why do we write to the accelerometer/magnetometer before we can read from them? What are the following lines of code doing? HINT: LOOK AT THE COMMENTS
+
+We want to configure the return and function. The accelerometer specifies the power, axis, update frequency, little/bid endian, sesitivity and other modes.The magnetometer configures the temp sensor, output rate, scale and conversion rate.
+
+Q3) What do the following lines of code do? (it is only necessary to explain the accelerometer)
+
+The loop is reading the x,y,z axis and shift buffer to save it in accel_data[i]

@@ -1,0 +1,21 @@
+What does the CS pin do (the CS pin is called SS in the lab manual)?
+It create slave connection with master. So communication of bits can be send or receive through connection.
+
+Why do you set the CS high at the end of the pin initializations? What other functions in f3d_gyro.c change CS from low to high or high to low?
+
+Set to high means the devices is not being used. So the master could initiates communciation with a slave by lowering ss. 
+f3d_gyro_interface_init
+f3d_gyro_read
+f3d_gyro_write
+
+How do you hook up multiple peripherals on one SPI bus?
+Each slave needs separate SS line. Each one kept it high at beginning and lower it when it is being used. There is only one could set to low among all of lines to commuciate with master.
+
+The STM has an Operating Frequency of 72 MHz. When initializing SPI1, what do you set the baud rate prescaler to? What is the resulting SPI clock frequency?
+
+Does a peripheral (slave) need to be configured with the transmission speed before it can communicate with the microcontroler (master)? Why would you want to be able to do on-the-fly changes in transmission speed?
+Yes and it is because if the speed is too far or too slow, it will cause data loss. Changing on-the-fly could corrinate different pieces of microcontroller to receive or transmit in a different speed, to avoid loss of data. 
+
+Describe what you learned and any difficulties you had [5]:
+We learned how to connect SPI. We also get done the gyro connection and connect it to Uart to show the axis value. 
+The problem we met is that when talked to gyro, getchar() doesn't work and we need write new getchar() to continue ouput data while listening the user command. 
